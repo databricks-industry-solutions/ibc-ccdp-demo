@@ -9,7 +9,7 @@
 
 # COMMAND ----------
 
-# MAGIC %run ./utils
+# MAGIC %run ./99_utils
 
 # COMMAND ----------
 
@@ -192,10 +192,16 @@ df["propensity_to_churn"] = model.predict_proba(df[features])[:,1]
 
 # DBTITLE 1,View predictions
 from pyspark.sql.functions import round
-churn_df = spark.createDataFrame(df).select('*',round(col('propensity_to_churn'),2))
+churn_df = spark.createDataFrame(df).select('SUBSCRIBER_SK_ID',round(col('propensity_to_churn'),2).alias('propensity_to_churn'))
 display(churn_df)
 
 # COMMAND ----------
 
 # DBTITLE 1,Save Predictions
 churn_df.write.mode("overwrite").option("overwriteSchema", "true").saveAsTable("ibc.ccdp_demo.churn") 
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ### Step 6: Activate audience segments in Hightouch
+# MAGIC [Link to Hightouch](https://app.hightouch.com/)
