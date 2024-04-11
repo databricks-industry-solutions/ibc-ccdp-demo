@@ -5,7 +5,7 @@
 # MAGIC
 # MAGIC * In this demo, we demonstrate how to use a Composable CDP - powered by AWS, Databricks, and Hightouch - to mitigate churn and grow our user base.
 # MAGIC
-# MAGIC <img style="margin: auto; display: block" width="1000px" src="https://raw.githubusercontent.com/databricks-industry-solutions/ibc-ccdp-demo/main/images/ibc_ccdp_ref_arch.png">
+# MAGIC <img style="margin: auto; display: block" width="1000px" src="https://raw.githubusercontent.com/databricks-industry-solutions/db-ccdp-demo/main/images/ibc_ccdp_ref_arch.png">
 
 # COMMAND ----------
 
